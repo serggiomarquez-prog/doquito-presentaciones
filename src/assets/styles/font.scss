@@ -1,0 +1,10 @@
+// Fuentes latinas incluidas (Doquito): las chinas originales de PPTist se quitaron para aligerar.
+$fonts: 'Inter', 'Roboto', 'OpenSans', 'Lato', 'Montserrat', 'Poppins', 'Nunito', 'Raleway', 'Oswald', 'SourceSansPro', 'Merriweather', 'Lora', 'Literata', 'SourceSerif4', 'PlayfairDisplay', 'DancingScript', 'JetBrainsMono';
+
+@each $font in $fonts {
+  @font-face {
+    font-display: swap;
+    font-family: $font;
+    src: url('../fonts/#{$font}.woff2') format('woff2');
+  }
+}

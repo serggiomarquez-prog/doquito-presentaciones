@@ -1,0 +1,150 @@
+export const enum KEYS {
+  C = 'C',
+  X = 'X',
+  Z = 'Z',
+  Y = 'Y',
+  A = 'A',
+  G = 'G',
+  L = 'L',
+  F = 'F',
+  D = 'D',
+  B = 'B',
+  P = 'P',
+  O = 'O',
+  R = 'R',
+  T = 'T',
+  MINUS = '-',
+  EQUAL = '=',
+  DIGIT_0 = '0',
+  DELETE = 'DELETE',
+  UP = 'ARROWUP',
+  DOWN = 'ARROWDOWN',
+  LEFT = 'ARROWLEFT',
+  RIGHT = 'ARROWRIGHT',
+  ENTER = 'ENTER',
+  SPACE = ' ',
+  TAB = 'TAB',
+  BACKSPACE = 'BACKSPACE',
+  ESC = 'ESCAPE',
+  PAGEUP = 'PAGEUP',
+  PAGEDOWN = 'PAGEDOWN',
+  F5 = 'F5',
+}
+
+interface HotkeyItem {
+  type: string
+  children: {
+    label: string
+    value?: string
+  }[] 
+}
+
+export const HOTKEY_DOC: HotkeyItem[] = [
+  {
+    type: 'General',
+    children: [
+      { label: 'Cortar', value: 'Ctrl + X' },
+      { label: 'Copiar', value: 'Ctrl + C' },
+      { label: 'Pegar', value: 'Ctrl + V' },
+      { label: 'Pegar como texto sin formato', value: 'Ctrl + Shift + V' },
+      { label: 'Duplicar rápido', value: 'Ctrl + D' },
+      { label: 'Seleccionar todo', value: 'Ctrl + A' },
+      { label: 'Deshacer', value: 'Ctrl + Z' },
+      { label: 'Rehacer', value: 'Ctrl + Y' },
+      { label: 'Borrar', value: 'Delete / Backspace' },
+      { label: 'Selección múltiple', value: 'Mantén Ctrl o Mayús' },
+      { label: 'Abrir buscar y reemplazar', value: 'Ctrl + F' },
+      { label: 'Imprimir', value: 'Ctrl + P' },
+      { label: 'Cerrar ventana', value: 'ESC' },
+    ],
+  },
+  {
+    type: 'Presentar',
+    children: [
+      { label: 'Presentar desde el principio', value: 'F5' },
+      { label: 'Presentar desde la diapositiva actual', value: 'Shift + F5' },
+      { label: 'Diapositiva anterior', value: '↑ / ← / PgUp' },
+      { label: 'Diapositiva siguiente', value: '↓ / → / PgDown' },
+      { label: 'Diapositiva siguiente', value: 'Enter / Space' },
+      { label: 'Salir de la presentación', value: 'ESC' },
+    ],
+  },
+  {
+    type: 'Editar diapositivas',
+    children: [
+      { label: 'Nueva diapositiva', value: 'Enter' },
+      { label: 'Mover el lienzo', value: 'Space + Arrastrar con el ratón' },
+      { label: 'Zoom del lienzo', value: 'Ctrl + Rueda del ratón' },
+      { label: 'Acercar', value: 'Ctrl + =' },
+      { label: 'Alejar', value: 'Ctrl + -' },
+      { label: 'Ajustar el lienzo a la pantalla', value: 'Ctrl + 0' },
+      { label: 'Diapositiva anterior (sin nada seleccionado)', value: '↑' },
+      { label: 'Diapositiva siguiente (sin nada seleccionado)', value: '↓' },
+      { label: 'Anterior', value: 'Rueda hacia arriba / RePág' },
+      { label: 'Siguiente', value: 'Rueda hacia abajo / AvPág' },
+      { label: 'Crear texto rápido', value: 'Doble clic en un hueco / T' },
+      { label: 'Crear rectángulo rápido', value: 'R' },
+      { label: 'Crear círculo rápido', value: 'O' },
+      { label: 'Crear línea rápida', value: 'L' },
+      { label: 'Salir del dibujo', value: 'Clic derecho' },
+    ],
+  },
+  {
+    type: 'Elementos',
+    children: [
+      { label: 'Mover', value: '↑ / ← / ↓ / →' },
+      { label: 'Bloquear', value: 'Ctrl + L' },
+      { label: 'Agrupar', value: 'Ctrl + G' },
+      { label: 'Desagrupar', value: 'Ctrl + Shift + G' },
+      { label: 'Al frente', value: 'Alt + F' },
+      { label: 'Al fondo', value: 'Alt + B' },
+      { label: 'Bloquear proporción', value: 'Mantén Ctrl o Mayús' },
+      { label: 'Duplicar', value: 'Ctrl + arrastrar' },
+      { label: 'Crear línea horizontal o vertical', value: 'Mantén Ctrl o Mayús' },
+      { label: 'Cambiar de elemento', value: 'Tab' },
+      { label: 'Confirmar recorte', value: 'Enter' },
+      { label: 'Terminar la forma personalizada', value: 'Enter' },
+    ],
+  },
+  {
+    type: 'Tablas',
+    children: [
+      { label: 'Ir a la celda siguiente', value: 'Tab' },
+      { label: 'Moverse entre celdas', value: '↑ / ← / ↓ / →' },
+      { label: 'Insertar fila encima', value: 'Ctrl + ↑' },
+      { label: 'Insertar fila debajo', value: 'Ctrl + ↓' },
+      { label: 'Insertar columna a la izquierda', value: 'Ctrl + ←' },
+      { label: 'Insertar columna a la derecha', value: 'Ctrl + →' },
+    ],
+  },
+  {
+    type: 'Datos del gráfico',
+    children: [
+      { label: 'Ir a la fila siguiente', value: 'Enter' },
+    ],
+  },
+  {
+    type: 'Texto',
+    children: [
+      { label: 'Negrita', value: 'Ctrl + B' },
+      { label: 'Cursiva', value: 'Ctrl + I' },
+      { label: 'Subrayado', value: 'Ctrl + U' },
+      { label: 'Código', value: 'Ctrl + E' },
+      { label: 'Superíndice', value: 'Ctrl + ;' },
+      { label: 'Subíndice', value: `Ctrl + '` },
+      { label: 'Seleccionar párrafo', value: `ESC` },
+    ],
+  },
+  {
+    type: 'Otros atajos',
+    children: [
+      { label: 'Añadir imagen: pegar una imagen copiada' },
+      { label: 'Añadir imagen: arrastrar una imagen al lienzo' },
+      { label: 'Añadir imagen: pegar código SVG en el lienzo' },
+      { label: 'Añadir imagen: pegar un enlace de imagen' },
+      { label: 'Añadir texto: pegar un texto copiado' },
+      { label: 'Añadir texto: arrastrar texto seleccionado al lienzo' },
+      { label: 'Editar texto: admite markdown para listas y citas' },
+    ],
+  },
+]
